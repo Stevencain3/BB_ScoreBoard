@@ -9,7 +9,7 @@ public class Main {
             System.out.println(p2);
             p1.foul();
             System.out.println(p1.getFouls());
-
+            System.out.println(p1.getPoints());
             if(p1.equals(p2))
             {
                 System.out.println("True");

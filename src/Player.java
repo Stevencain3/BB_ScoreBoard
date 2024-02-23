@@ -97,7 +97,8 @@ public class Player
 
 	public int getPoints()
 	{
-		return points;
+		int totalPoints = this.onePoint + (this.twoPoint * 2) + (this.threePoint * 3);
+		return totalPoints;
 	}
 
 	public int getOnePoint()
