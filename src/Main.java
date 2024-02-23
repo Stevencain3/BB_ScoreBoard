@@ -7,6 +7,8 @@ public class Main {
             Player p2 = new Player(2, "Hines");
             System.out.println(p1);
             System.out.println(p2);
+            p1.foul();
+            System.out.println(p1.getFouls());
 
             if(p1.equals(p2))
             {
@@ -22,6 +24,8 @@ public class Main {
         {
             System.out.println(e);
         }
+
+
 
     }
 }

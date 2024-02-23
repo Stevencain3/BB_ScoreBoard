@@ -5,9 +5,23 @@ public class Player
 	
 	private String name;
 
+	private int foul;
+
+	private int onePoint;
+
+	private int twoPoint;
+
+	private int threePoint;
+
+
 	private Player(){
 		this.jersey = 0;
 		this.name = "Unknown";
+		this.foul = 0;
+		this.onePoint = 0;
+		this.twoPoint = 0;
+		this.threePoint = 0;
+
 
 	}
 	
@@ -67,7 +81,40 @@ public class Player
 	
 	@Override 
 	public String toString(){
-		return this.jersey + " " + this.name;
+		return this.jersey + " " + this.name;}
+
+	public int getFouls()
+	{
+		return this.foul;
 	}
-	
+
+
+	public void foul()
+	{
+		foul++;
+	}
+
+
+	public int getPoints()
+	{
+		return points;
+	}
+
+	public int getOnePoint()
+	{
+		return onePoint;
+	}
+
+	public int getTwoPoint()
+	{
+		return twoPoint;
+	}
+
+	public int getThreePoint()
+	{
+		return threePoint;
+	}
+
+
 }
+
