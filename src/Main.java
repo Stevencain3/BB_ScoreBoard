@@ -3,7 +3,11 @@ public class Main {
     {
         try
         {
-            Player p1 = new Player(1);
+            Team T1=new Team("T1");
+            T1.addPlayer(1, Steven);
+            T1.displayDetailStats();
+
+            Player p1 = new Player(1,"Steven");
             Player p2 = new Player(2, "Hines");
             System.out.println(p1);
             System.out.println(p2);
@@ -15,7 +19,6 @@ public class Main {
 
 
             p1.displayStats();
-
 
 
 

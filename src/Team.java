@@ -39,13 +39,13 @@ public class Team {
 			return this.allPlayers.get(index);
 	}
 
-	public void addPlayer(int seat, String name) throws Exception {
-		Player player = this.getPlayer(seat);
+	public void addPlayer(int jersey, String name) throws Exception {
+		Player player = this.getPlayer(jersey);
 
 		if (player == null) {
-			this.allPlayers.add(new Player(seat, name));
+			this.allPlayers.add(new Player(jersey, name));
 		} else {
-			throw new Exception("Seat: " + seat + " is already assigned to this course " + player.getName() + "!");
+			throw new Exception("Seat: " + jersey + " is already assigned to this course " + player.getName() + "!");
 		}
 	}
 
@@ -80,8 +80,8 @@ public class Team {
 
 		this.displayTeamStats();
 		System.out.println();
-		System.out.println("Seat   Name            Absent Excused Late OnTime");
-		System.out.println("====== =============== ====== ======= ==== ======");
+		System.out.println("Jersey   Name       Fouls 1pt 2pt 3pt Total");
+		System.out.println("====== ==========  =====  === === === =====");
 		
     	for(int i = 0; i < allPlayers.size(); i++) {
     		System.out.printf("%6d %-15s %6d %4d %7d %6d\n",
