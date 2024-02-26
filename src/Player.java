@@ -138,6 +138,13 @@ public class Player
 
 	}
 
+	public void displayStats()
+	{
+
+		System.out.println(jersey+" "+name+"         "+foul+ " "+onePoint+" "+twoPoint+" "+threePoint + " " + this.getPoints());
+
+	}
+
 
 }
 
