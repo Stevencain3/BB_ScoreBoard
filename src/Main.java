@@ -10,6 +10,17 @@ public class Main {
             p1.foul();
             System.out.println(p1.getFouls());
             System.out.println(p1.getPoints());
+           p1.shot(1);
+            p1.shot(2);
+
+
+            p1.displayStats();
+
+
+
+
+
+
 
             if(p1.equals(p2))
             {

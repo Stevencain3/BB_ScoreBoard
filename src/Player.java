@@ -117,17 +117,31 @@ public class Player
 	}
 
 	public int shot(int shotType) throws Exception
+
 	{
-		if (shotType == 1 || shotType == 2 || shotType == 3 )
+		switch (shotType)
 		{
+			case 1: onePoint ++;
+			break;
+
+			case 2:  twoPoint ++;
+			break;
+
+			case 3: threePoint ++;
+			break;
+
+			default: throw new Exception("Invalid shotType: " + shotType);
 
 
-		}
-		else
-		{
-			throw new Exception("Invalid shotType: " + shotType);
 		}
 		return 0;
+
+	}
+
+	public void displayStats()
+	{
+
+		System.out.println(jersey+" "+name+"         "+foul+ " "+onePoint+" "+twoPoint+" "+threePoint + " " + this.getPoints());
 
 	}
 
