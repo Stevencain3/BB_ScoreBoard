@@ -116,6 +116,21 @@ public class Player
 		return threePoint;
 	}
 
+	public int shot(int shotType) throws Exception
+	{
+		if (shotType == 1 || shotType == 2 || shotType == 3 )
+		{
+
+
+		}
+		else
+		{
+			throw new Exception("Invalid shotType: " + shotType);
+		}
+		return 0;
+
+	}
+
 
 }
 
