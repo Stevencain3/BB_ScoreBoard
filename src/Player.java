@@ -97,7 +97,8 @@ public class Player
 
 	public int getPoints()
 	{
-		return points;
+		int totalPoints = this.onePoint + (this.twoPoint * 2) + (this.threePoint * 3);
+		return totalPoints;
 	}
 
 	public int getOnePoint()
@@ -113,6 +114,21 @@ public class Player
 	public int getThreePoint()
 	{
 		return threePoint;
+	}
+
+	public int shot(int shotType) throws Exception
+	{
+		if (shotType == 1 || shotType == 2 || shotType == 3 )
+		{
+
+
+		}
+		else
+		{
+			throw new Exception("Invalid shotType: " + shotType);
+		}
+		return 0;
+
 	}
 
 
