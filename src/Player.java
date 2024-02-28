@@ -25,17 +25,17 @@ public class Player
 
 	}
 	
-	public Player(int seat) throws Exception
+	public Player(int jersey) throws Exception
 	{
 		this();
-		this.setSeat(seat);
+		this.setJersey(jersey);
 	}
 
-	public Player(int seat, String name) throws Exception
+	public Player(int jersey, String name) throws Exception
 	{
 		this();
 		this.setName(name);
-		this.setSeat(seat);
+		this.setJersey(jersey);
 	}
 
 	public String getName() {
@@ -47,7 +47,7 @@ public class Player
 		name = name.trim();
 		
 		if (name.isEmpty())
-			throw new Exception("Student name can not be blank.");
+			throw new Exception("Player name can not be blank.");
 			
 		this.name = name;
 	}
@@ -56,10 +56,10 @@ public class Player
 		return this.jersey;
 	}
 
-	public void setSeat(int id) throws Exception
+	public void setJersey(int id) throws Exception
 	{
 		if (id < 0)
-			throw new Exception("Student ID can not be negative.");
+			throw new Exception("Jersey ID can not be negative.");
 		
 		this.jersey = id;
 	}
@@ -103,38 +103,40 @@ public class Player
 
 	public int getOnePoint()
 	{
-		return onePoint;
+		return this.onePoint;
 	}
 
 	public int getTwoPoint()
 	{
-		return twoPoint;
+		return this.twoPoint;
 	}
 
 	public int getThreePoint()
 	{
-		return threePoint;
+		return this.threePoint;
 	}
 
-	public int shot(int shotType) throws Exception
+	public void shot(int shotType) throws Exception
 
 	{
-		switch (shotType)
-		{
-			case 1: onePoint ++;
-			break;
+		switch (shotType) {
+			case 1:
+				onePoint++;
+				break;
 
-			case 2:  twoPoint ++;
-			break;
+			case 2:
+				twoPoint++;
+				break;
 
-			case 3: threePoint ++;
-			break;
+			case 3:
+				threePoint++;
+				break;
 
-			default: throw new Exception("Invalid shotType: " + shotType);
+			default:
+				throw new Exception("Invalid shotType: " + shotType);
 
 
 		}
-		return 0;
 
 	}
 

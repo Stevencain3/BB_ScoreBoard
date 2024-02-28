@@ -32,10 +32,10 @@ public class Team {
 		this.name = name;
 	}
 	
-	public Player getPlayer(int seat) throws Exception
+	public Player getPlayer(int jersey) throws Exception
 	{
 		
-		int index = this.allPlayers.indexOf(new Player(seat));
+		int index = this.allPlayers.indexOf(new Player(jersey));
 		
 		if (index == -1)
 			return null;
@@ -94,12 +94,12 @@ public class Team {
 
 		this.displayTeamStats();
 		System.out.println();
-		System.out.println("Jersey   Name       Fouls 1pt 2pt 3pt Total");
-		System.out.println("====== ==========  =====  === === === =====");
-		
+		System.out.println(" Jersey    Name     Fouls  1pt 2pt 3pt Total");
+		System.out.println("======== =========  =====  === === === =====");
+
     	for(int i = 0; i < allPlayers.size(); i++)
 		{
-    		System.out.printf("%8d %-15s %6d %5d %5d %5d %7d \n",
+    		System.out.printf("%4d %11s %6d %5d %3d %3d %4d \n",
     				this.allPlayers.get(i).jersey(),
 					this.allPlayers.get(i).getName(),
 					this.allPlayers.get(i).getFouls(),
