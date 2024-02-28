@@ -4,7 +4,7 @@ public class Main {
         try
         {
             Team T1=new Team("T1");
-            T1.addPlayer(1, Steven);
+            T1.addPlayer(1, "Steven");
             T1.displayDetailStats();
 
             Player p1 = new Player(1,"Steven");

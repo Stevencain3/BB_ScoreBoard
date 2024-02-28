@@ -6,12 +6,14 @@ public class Team {
 	private String name;
 	private List<Player> allPlayers;
 
-	public Team() {
+	public Team()
+	{
 		this.name = "Unknown";
 		allPlayers = new ArrayList<Player>();
 	}
 	
-	public Team(String name) throws Exception {
+	public Team(String name) throws Exception
+	{
 		this();
 		this.setName(name);
 	}
@@ -20,7 +22,8 @@ public class Team {
 		return this.name;
 	}
 
-	public void setName(String name) throws Exception {
+	public void setName(String name) throws Exception
+	{
 		name = name.trim();
 
 		if (name.isEmpty())
@@ -29,7 +32,8 @@ public class Team {
 		this.name = name;
 	}
 	
-	public Player getPlayer(int seat) throws Exception {
+	public Player getPlayer(int seat) throws Exception
+	{
 		
 		int index = this.allPlayers.indexOf(new Player(seat));
 		
@@ -39,30 +43,38 @@ public class Team {
 			return this.allPlayers.get(index);
 	}
 
-	public void addPlayer(int jersey, String name) throws Exception {
+	public void addPlayer(int jersey, String name) throws Exception
+	{
 		Player player = this.getPlayer(jersey);
 
-		if (player == null) {
+		if (player == null)
+		{
 			this.allPlayers.add(new Player(jersey, name));
-		} else {
+		}
+		else
+		{
 			throw new Exception("Seat: " + jersey + " is already assigned to this course " + player.getName() + "!");
 		}
 	}
 
-	public int getTeamFouls() {
+	public int getTeamFouls()
+	{
 		int totalFouls = 0;
 	
-		for (int i = 0; i < this.allPlayers.size(); i++) {
+		for (int i = 0; i < this.allPlayers.size(); i++)
+		{
 			totalFouls += this.allPlayers.get(i).getFouls();
 		}
 		
 		return totalFouls;
 	}
 
-	public int getTeamPoints() {
+	public int getTeamPoints()
+	{
 		int totalPoints = 0;
 
-		for (int i = 0; i < this.allPlayers.size(); i++) {
+		for (int i = 0; i < this.allPlayers.size(); i++)
+		{
 			totalPoints += this.allPlayers.get(i).getPoints();
 		}
 
@@ -70,24 +82,32 @@ public class Team {
 	}
 
 
-	public void displayTeamStats() {
+	public void displayTeamStats()
+	{
 		System.out.printf(this.name);
 		System.out.print(" fouls =" + this.getTeamFouls());
 		System.out.print(" points =" + this.getTeamPoints());
 	}
 
-	public void displayDetailStats() {
+	public void displayDetailStats()
+	{
 
 		this.displayTeamStats();
 		System.out.println();
 		System.out.println("Jersey   Name       Fouls 1pt 2pt 3pt Total");
 		System.out.println("====== ==========  =====  === === === =====");
 		
-    	for(int i = 0; i < allPlayers.size(); i++) {
-    		System.out.printf("%6d %-15s %6d %4d %7d %6d\n",
-    				this.allPlayers.get(i).getSeat(),
-					this.allPlayers.get(i).getName());
-    	}
+    	for(int i = 0; i < allPlayers.size(); i++)
+		{
+    		System.out.printf("%8d %-15s %6d %5d %5d %5d %7d \n",
+    				this.allPlayers.get(i).jersey(),
+					this.allPlayers.get(i).getName(),
+					this.allPlayers.get(i).getFouls(),
+					this.allPlayers.get(i).getOnePoint(),
+					this.allPlayers.get(i).getTwoPoint(),
+					this.allPlayers.get(i).getThreePoint(),
+					this.allPlayers.get(i).getPoints());
+		}
     	
     	System.out.println();
 	}

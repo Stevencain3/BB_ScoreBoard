@@ -52,7 +52,7 @@ public class Player
 		this.name = name;
 	}
 
-	public int getSeat() {
+	public int jersey() {
 		return this.jersey;
 	}
 
@@ -73,13 +73,13 @@ public class Player
         
         Player other = (Player)object;
         
-       	if (this.jersey == other.getSeat())
+       	if (this.jersey == other.jersey())
        		return true;
        	else
        		return false;
     }
 	
-	@Override 
+	@Override
 	public String toString(){
 		return this.jersey + " " + this.name;}
 
