@@ -102,7 +102,8 @@ public class BB_Scoreboard {
         		break;
         		
     		case 3:
-    			this.displayGameStatus();
+    			home.displayDetailStats();
+				away.displayDetailStats();
     			break;
     			
     		default:
@@ -135,12 +136,14 @@ public class BB_Scoreboard {
 			
 		}
 			
-		System.out.println();
-		System.out.println(SINGLE_LINE);
-		team.displayTeamStats();
-		System.out.println();
-		System.out.println(SINGLE_LINE);
-		System.out.println();
+//		System.out.println();
+//		System.out.println(DOUBLE_LINE);
+//		team.displayTeamStats();
+//		System.out.println();
+//		System.out.println(DOUBLE_LINE);
+
+		updateScoreboard();
+
 
 	}
     
@@ -159,7 +162,7 @@ public class BB_Scoreboard {
 		System.out.println("4 = Three Pointer");
 		
 		System.out.println(SINGLE_LINE);
-		status = Input.getIntRange("Enter Status: ", 1, 4);
+		status = Input.getIntRange("Enter Stat Type: ", 1, 4);
 		System.out.println(SINGLE_LINE);
 		
 		switch(status) {
@@ -184,32 +187,38 @@ public class BB_Scoreboard {
 		System.out.println();
     }
     
-    private void updateScoreboard() {
-
-
+    private void updateScoreboard()
+	{
+		System.out.println();
  		home.displayTeamStats();
+		System.out.println();
     	away.displayTeamStats();
-
+		System.out.println();
+		System.out.println(DOUBLE_LINE);
     }
-	private void displayGameStatus() {
+	private void displayGameStatus()
+	{
 		home.displayDetailStats();
 		away.displayDetailStats();
-
 	}
 
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception
+	{
 
 		BB_Scoreboard app = new BB_Scoreboard();
 		
 		app.displayAppHeading();
 		
-		try {
+		try
+		{
 			app.setupTeams();
 			app.playGame();
 			app.updateScoreboard();
 
-		} catch (Exception e) {
+		}
+		catch (Exception e)
+		{
 			System.out.println(e.getMessage());
 			System.out.println("Sorry but this program ended with an error. Please contact Steven or Hines plz!");
 		}

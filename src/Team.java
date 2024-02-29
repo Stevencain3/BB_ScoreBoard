@@ -84,6 +84,7 @@ public class Team {
 
 	public void displayTeamStats()
 	{
+
 		System.out.printf(this.name);
 		System.out.print(" fouls =" + this.getTeamFouls());
 		System.out.print(" points =" + this.getTeamPoints());
@@ -92,7 +93,8 @@ public class Team {
 	public void displayDetailStats()
 	{
 
-		this.displayTeamStats();
+		displayTeamStats();
+
 		System.out.println();
 		System.out.println(" Jersey    Name     Fouls  1pt 2pt 3pt Total");
 		System.out.println("======== =========  =====  === === === =====");

@@ -142,8 +142,7 @@ public class Player
 
 	public void displayStats()
 	{
-
-		System.out.println("#" + jersey+"  "+name+"       Fouls:"+ foul +  "   Points:" + this.getPoints());
+		System.out.println("#" + jersey+"  "+name+"       Fouls:"+ foul +  "   Points:" + getPoints());
 
 	}
 
