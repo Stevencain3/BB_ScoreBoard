@@ -138,6 +138,7 @@ public class BB_Scoreboard {
 		System.out.println();
 		System.out.println(SINGLE_LINE);
 		team.displayTeamStats();
+		System.out.println();
 		System.out.println(SINGLE_LINE);
 		System.out.println();
 
@@ -179,17 +180,18 @@ public class BB_Scoreboard {
 		}
 
 		player.displayStats();
+		System.out.println(SINGLE_LINE);
 		System.out.println();
     }
     
     private void updateScoreboard() {
+
 
  		home.displayTeamStats();
     	away.displayTeamStats();
 
     }
 	private void displayGameStatus() {
-
 		home.displayDetailStats();
 		away.displayDetailStats();
 
