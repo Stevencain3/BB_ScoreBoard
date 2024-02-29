@@ -166,34 +166,33 @@ public class BB_Scoreboard {
 				player.foul();
 				break;
 			case 2:
-				player.getOnePoint();
+				player.shot(1);
 				break;
 			case 3:
-				player.getTwoPoint();
+				player.shot(2);
 				break;
 			case 4:
-				player.getThreePoint();
+				player.shot(3);
 				break;
 			default:
 				throw new Exception("Invalid player status!");
 		}
 
-	//	Team.displayDetailStats();
+		player.displayStats();
 		System.out.println();
     }
     
     private void updateScoreboard() {
 
-    	this.home.displayTeamStats();
-    	this.away.displayTeamStats();
+ 		home.displayTeamStats();
+    	away.displayTeamStats();
 
     }
 	private void displayGameStatus() {
 
-		//	for (int i = 0; i < this.allPlayers.size(); i++)
-		//		{
-		//			totalPoints += this.allPlayers.get(i).getPoints();
-		//		}
+		home.displayDetailStats();
+		away.displayDetailStats();
+
 	}
 
 
