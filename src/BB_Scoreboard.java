@@ -183,13 +183,14 @@ public class BB_Scoreboard {
 		}
 
 		player.displayStats();
+		System.out.println("This is line 1 under update player stats ");
 		System.out.println(SINGLE_LINE);
 		System.out.println();
+		updateScoreboard();
     }
     
     private void updateScoreboard()
 	{
-		System.out.println();
  		home.displayTeamStats();
 		System.out.println();
     	away.displayTeamStats();
@@ -198,6 +199,7 @@ public class BB_Scoreboard {
     }
 	private void displayGameStatus()
 	{
+		System.out.println("This is in dispaly game stats");
 		home.displayDetailStats();
 		away.displayDetailStats();
 	}
