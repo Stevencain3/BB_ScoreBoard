@@ -8,7 +8,8 @@ quit the app.
 
  */
 
-public class BB_Scoreboard {
+public class BB_Scoreboard
+{
 
 	private final static String DOUBLE_LINE = "==================================================";
 	private final static String SINGLE_LINE = "--------------------------------------------------";
@@ -16,12 +17,14 @@ public class BB_Scoreboard {
 	Team home;
 	Team away;
 
-	public BB_Scoreboard() {
+	public BB_Scoreboard()
+	{
 		home = new Team();
 		away = new Team();
 	}
 
-    private void displayAppHeading() {
+    private void displayAppHeading()
+	{
     	
 		System.out.println(DOUBLE_LINE);
 		System.out.println("Welcome to the Basket Ball Stats App");
@@ -30,7 +33,8 @@ public class BB_Scoreboard {
 		
     }
 
-    private void setupTeams() throws Exception {
+    private void setupTeams() throws Exception
+	{
 
 		String teamName = "Unknown";
 
@@ -45,22 +49,27 @@ public class BB_Scoreboard {
 		this.setupPlayers(this.away);
     }
     
-    private void setupPlayers(Team team) {
+    private void setupPlayers(Team team)
+	{
     	String teamName = team.getName();
     	String playerName = null;
     	int jersey = 0;
 
-    	while (true) {
+    	while (true)
+		{
 			System.out.println();
 			playerName = Input.getLine("Enter " + teamName + " player's name or 'q' to quit: ");
 			
 			if (playerName.equals("q"))
 				return;
 			
-			try {
+			try
+			{
 				jersey = Input.getIntRange("Enter " + playerName + " Jersey number: ", 0, 55);
 				team.addPlayer(jersey, playerName);
-			} catch (Exception e) {
+			}
+			catch (Exception e)
+			{
 				System.out.println(e.getMessage());
 				System.out.println("Unable to add Player!");
 			}
@@ -69,7 +78,8 @@ public class BB_Scoreboard {
 		    	
     }
     
-    private void playGame() throws Exception {
+    private void playGame() throws Exception
+	{
     	
     	boolean keepLooping = true;
     	int userInput = 0;
@@ -80,7 +90,8 @@ public class BB_Scoreboard {
     	System.out.println(DOUBLE_LINE);
     	System.out.println();
     	
-    	while (keepLooping) {
+    	while (keepLooping)
+		{
     		
     		System.out.println(SINGLE_LINE);
     		System.out.println("Main Menu");
@@ -97,9 +108,11 @@ public class BB_Scoreboard {
     		
     		System.out.println();
     		
-    		switch (userInput) {
+    		switch (userInput)
+			{
     		case 0:
     			keepLooping = false;
+				System.out.println("Thank you for Playing");
         		System.out.println();
         		break;
         		
@@ -112,8 +125,7 @@ public class BB_Scoreboard {
         		break;
         		
     		case 3:
-    			home.displayDetailStats();
-				away.displayDetailStats();
+				displayGameStatus();
     			break;
     			
     		default:
@@ -124,7 +136,8 @@ public class BB_Scoreboard {
 
     }
     
-    private void updateTeamStats(Team team) throws Exception {
+    private void updateTeamStats(Team team) throws Exception
+	{
 
     	int jersey = 0;
     	Player player;
@@ -145,19 +158,13 @@ public class BB_Scoreboard {
 			this.updatePlayerStats(player);
 			
 		}
-			
-//		System.out.println();
-//		System.out.println(DOUBLE_LINE);
-//		team.displayTeamStats();
-//		System.out.println();
-//		System.out.println(DOUBLE_LINE);
 
 		updateScoreboard();
 
-
 	}
     
-    private void updatePlayerStats(Player player) throws Exception {
+    private void updatePlayerStats(Player player) throws Exception
+	{
     	int status = 0;
 
 		System.out.println();
@@ -175,7 +182,8 @@ public class BB_Scoreboard {
 		status = Input.getIntRange("Enter Stat Type: ", 1, 4);
 		System.out.println(SINGLE_LINE);
 		
-		switch(status) {
+		switch(status)
+		{
 			case 1:
 				player.foul();
 				break;
@@ -193,27 +201,26 @@ public class BB_Scoreboard {
 		}
 
 		player.displayStats();
-		System.out.println("This is line 1 under update player stats ");
 		System.out.println(SINGLE_LINE);
 		System.out.println();
-		updateScoreboard();
     }
     
     private void updateScoreboard()
 	{
+		System.out.println();
+		System.out.println(DOUBLE_LINE);
  		home.displayTeamStats();
 		System.out.println();
     	away.displayTeamStats();
 		System.out.println();
 		System.out.println(DOUBLE_LINE);
     }
+
 	private void displayGameStatus()
 	{
-		System.out.println("This is in display game stats");
 		home.displayDetailStats();
 		away.displayDetailStats();
 	}
-
 
 	public static void main(String[] args) throws Exception
 	{

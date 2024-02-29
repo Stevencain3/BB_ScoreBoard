@@ -24,7 +24,8 @@ public class Player
 	private int threePoint;
 
 
-	private Player(){
+	private Player()
+	{
 		this.jersey = 0;
 		this.name = "Unknown";
 		this.foul = 0;
@@ -48,7 +49,8 @@ public class Player
 		this.setJersey(jersey);
 	}
 
-	public String getName() {
+	public String getName()
+	{
 		return this.name;
 	}
 
@@ -62,7 +64,8 @@ public class Player
 		this.name = name;
 	}
 
-	public int jersey() {
+	public int jersey()
+	{
 		return this.jersey;
 	}
 
@@ -90,8 +93,10 @@ public class Player
     }
 	
 	@Override
-	public String toString(){
-		return this.jersey + " " + this.name;}
+	public String toString()
+	{
+		return this.jersey + " " + this.name;
+	}
 
 	public int getFouls()
 	{
@@ -129,7 +134,8 @@ public class Player
 	public void shot(int shotType) throws Exception
 
 	{
-		switch (shotType) {
+		switch (shotType)
+		{
 			case 1:
 				onePoint++;
 				break;

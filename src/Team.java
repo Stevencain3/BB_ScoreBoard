@@ -11,7 +11,8 @@ stores each teams collective points and fouls. And displays team statistics.
 import java.util.ArrayList;
 import java.util.List;
 
-public class Team {
+public class Team
+{
 
 	private String name;
 	private List<Player> allPlayers;
@@ -28,7 +29,8 @@ public class Team {
 		this.setName(name);
 	}
 
-	public String getName() {
+	public String getName()
+	{
 		return this.name;
 	}
 
@@ -94,16 +96,17 @@ public class Team {
 
 	public void displayTeamStats()
 	{
-
 		System.out.printf(this.name);
-		System.out.print(" fouls =" + this.getTeamFouls());
-		System.out.print(" points =" + this.getTeamPoints());
+		System.out.print(" Fouls = " + this.getTeamFouls());
+		System.out.print(" Points = " + this.getTeamPoints());
 	}
 
 	public void displayDetailStats()
 	{
-
+		System.out.println("--------------------------------------------------");
 		displayTeamStats();
+		System.out.println();
+		System.out.println("--------------------------------------------------");
 
 		System.out.println();
 		System.out.println(" Jersey    Name     Fouls  1pt 2pt 3pt Total");
