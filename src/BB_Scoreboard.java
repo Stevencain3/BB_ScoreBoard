@@ -22,16 +22,16 @@ public class BB_Scoreboard {
 
     private void setupTeams() throws Exception {
 
-		String courseName = "Unknown";
+		String teamName = "Unknown";
 
-		courseName = Input.getLine("Enter Section 1's course name: ");
-		this.home.setName(courseName);
+		teamName = Input.getLine("Enter the first teams name: ");
+		this.home.setName(teamName);
 		this.setupPlayers(this.home);
 
 		System.out.println();
 
-		courseName = Input.getLine("Enter Section 2's course name: ");
-		this.away.setName(courseName);
+		teamName = Input.getLine("Enter the second teams name: ");
+		this.away.setName(teamName);
 		this.setupPlayers(this.away);
     }
     
@@ -42,7 +42,7 @@ public class BB_Scoreboard {
 
     	while (true) {
 			System.out.println();
-			playerName = Input.getLine("Enter " + teamName + " student's name or 'q' to quit: ");
+			playerName = Input.getLine("Enter " + teamName + " player's name or 'q' to quit: ");
 			
 			if (playerName.equals("q"))
 				return;
@@ -76,10 +76,10 @@ public class BB_Scoreboard {
     		System.out.println("Main Menu");
     		System.out.println(SINGLE_LINE);
     		
-    		System.out.println("0 = End Attendance App");
-    		System.out.println("1 = Take " + home.getName() + " Attendance");
-    		System.out.println("2 = Take " + away.getName() + " Attendance");
-    		System.out.println("3 = Display All Attendance Report");
+    		System.out.println("0 = End Game");
+    		System.out.println("1 = Enter " + home.getName() + " Teams Stats");
+    		System.out.println("2 = Enter " + away.getName() + " Teams Stats");
+    		System.out.println("3 = Display Game Stats");
     		
     		System.out.println(SINGLE_LINE);
     		userInput = Input.getIntRange("Menu Choice: ", 0, 3);
@@ -119,7 +119,7 @@ public class BB_Scoreboard {
     	Player player;
     	
 		while (true) {
-			jersey = Input.getIntRange("Enter " + team.getName() + "'s Student Seat or 0 to quit: ", 0, 55);
+			jersey = Input.getIntRange("Enter " + team.getName() + "'s Jersey Number or 0 to quit: ", 0, 55);
 
 			if (jersey == 0)
 				break;
@@ -152,10 +152,10 @@ public class BB_Scoreboard {
 		System.out.println("Enter #" + player.jersey() + " " + player.getName() + " Points");
 		System.out.println(SINGLE_LINE);
 		
-		System.out.println("1 = Absent");
-		System.out.println("2 = Late");
-		System.out.println("3 = Excused");
-		System.out.println("4 = On Time");
+		System.out.println("1 = Foul");
+		System.out.println("2 = Free Throw");
+		System.out.println("3 = Two Pointer");
+		System.out.println("4 = Three Pointer");
 		
 		System.out.println(SINGLE_LINE);
 		status = Input.getIntRange("Enter Status: ", 1, 4);
@@ -163,22 +163,22 @@ public class BB_Scoreboard {
 		
 		switch(status) {
 			case 1:
-				player.absent();
+				player.foul();
 				break;
 			case 2:
-				player.late();
+				player.getOnePoint();
 				break;
 			case 3:
-				player.excused();
+				player.getTwoPoint();
 				break;
 			case 4:
-				player.onTime();
+				player.getThreePoint();
 				break;
 			default:
-				throw new Exception("Invalid attendance status!");
+				throw new Exception("Invalid player status!");
 		}
 
-		player.displayDetailStats();
+	//	Team.displayDetailStats();
 		System.out.println();
     }
     
@@ -205,7 +205,9 @@ public class BB_Scoreboard {
 		
 		try {
 			app.setupTeams();
-			app.updateTeamStats();
+			app.playGame();
+			//app.updateTeamStats();
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			System.out.println("Sorry but this program ended with an error. Please contact Steven or Hines plz!");
