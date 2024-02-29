@@ -65,7 +65,7 @@ public class Team
 		}
 		else
 		{
-			throw new Exception("Seat: " + jersey + " is already assigned to this course " + player.getName() + "!");
+			throw new Exception("Seat: " + jersey + " is already assigned to this player " + player.getName() + "!");
 		}
 	}
 
