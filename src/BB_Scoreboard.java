@@ -1,3 +1,13 @@
+/*
+Authors: Hines and Steven
+URL: https://github.com/Stevencain3/BB_ScoreBoard.git
+
+The Scoreboard class welcomes the user to the app. Then prompts user to enter information to set up the team and players
+names and jersey numbers. The app will keep looping and allow users to keep inputting information until they wish to
+quit the app.
+
+ */
+
 public class BB_Scoreboard {
 
 	private final static String DOUBLE_LINE = "==================================================";
@@ -199,7 +209,7 @@ public class BB_Scoreboard {
     }
 	private void displayGameStatus()
 	{
-		System.out.println("This is in dispaly game stats");
+		System.out.println("This is in display game stats");
 		home.displayDetailStats();
 		away.displayDetailStats();
 	}

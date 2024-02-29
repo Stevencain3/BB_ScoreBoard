@@ -1,3 +1,13 @@
+/*
+Authors: Hines and Steven
+URL: https://github.com/Stevencain3/BB_ScoreBoard.git
+
+This class creates a home and an away team, assigns players to each team. Has error handling for equal jersey
+numbers within the same team. However, equal jersey numbers can be created on different teams. The team class
+stores each teams collective points and fouls. And displays team statistics.
+
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 

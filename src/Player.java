@@ -1,3 +1,13 @@
+/*
+Authors: Hines and Steven
+URL: https://github.com/Stevencain3/BB_ScoreBoard.git
+
+This class stores players name, jersey number. Each player is their own array list
+that holds their game stats. This class also displays player statistics.
+
+ */
+
+
 public class Player
 {
 
