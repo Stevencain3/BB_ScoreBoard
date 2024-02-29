@@ -66,7 +66,7 @@ public class BB_Scoreboard {
     	
     	System.out.println();
     	System.out.println(DOUBLE_LINE);    	
-    	System.out.println("Recording Attendance!");
+    	System.out.println("Recording Game Stats!");
     	System.out.println(DOUBLE_LINE);
     	System.out.println();
     	
@@ -205,7 +205,7 @@ public class BB_Scoreboard {
 		try {
 			app.setupTeams();
 			app.playGame();
-			//app.updateTeamStats();
+			app.updateScoreboard();
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
